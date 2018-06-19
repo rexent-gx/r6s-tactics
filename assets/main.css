@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding : 0;
+}
+
+body {
+    background-color: #3d3d3d;
+    margin: auto;
+}
+
+header {
+    position: fixed;
+    display: block;
+    background-color: #131313;
+    width: 100vw;
+    height: 70px;
+    z-index: 5;
+}
+
+#wrapper {
+    height: 100vh;
+}
+
+#title {
+    display: inline-block;
+    color: white;
+    padding-left: 25px;
+    margin: 10px 0px;
+}
+
+#map-selector {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    border: 2px solid rgb(165, 117, 14);
+    border-radius: 5px;
+    background: rgb(104, 104, 104);
+    margin: 0px 10px;
+    vertical-align: super;
+}
+
+
+select {
+    cursor: pointer;
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    width: 200px;
+    padding: 5px 5px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+}
+
+::-ms-expand {
+    display: none;
+}
+
+#floornav {
+    display: inline-block;
+    color: gray;
+    margin: auto;
+    padding-left: 30px;
+}
+
+#floornav li { 	
+    display: inline;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0px 10px;
+} 
+
+#floornav .active {
+    color: goldenrod;
+}
+
+.map {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.map img {
+    padding-top: 70px;
+    object-fit: contain;
+    width: 100vw;
+    height: calc(100vh - 80px);
+}

@@ -1,0 +1,45 @@
+{{define "maps"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>R6S Tactics</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/main.css"/>
+    <script src="../assets/jquery-3.3.1.min.js"></script>
+    <script>
+        var floors = [{{.Floors}}];
+        $(document).ready(function(){
+            $('#mapimg').attr('src', floors[0]);
+            $('li').click(function () {
+                var index = $('li').index(this);
+                $('li').removeClass('active');
+                $(this).addClass('active');
+                $('#mapimg').attr('src', floors[index]);
+            });
+            $('select').change(function() {
+                var val = $(this).val();
+                window.location.href = '/'+ val;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+    <header>
+        <h1 id="title">R6S Tactics</h1>
+        <div id="map-selector">
+            <select name="map-list">
+                {{.Maplist|safehtml}}
+            </select>  
+        </div>
+        <ul id="floornav">
+            {{.Floornav|safehtml}}
+        </ul>
+    </header>
+    <div class="map">
+        <img id="mapimg" src="">
+    </div>
+    </div>
+</body>
+</html>
+{{end}}
